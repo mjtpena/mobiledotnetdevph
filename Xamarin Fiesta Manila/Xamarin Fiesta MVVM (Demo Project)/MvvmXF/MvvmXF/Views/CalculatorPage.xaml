@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmXF.Views.CalculatorPage"
+             xmlns:calculatorVm="clr-namespace:MvvmXF.ViewModels">
+
+    <ContentPage.BindingContext>
+        <calculatorVm:CalculatorDetailsVm/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Label Text="Enter First Number"/>
+        <Entry Text="{Binding FirstNumber,Mode=TwoWay}"
+               Keyboard="Numeric"/>
+        <Label Text="Enter Second Number"/>
+        <Entry Text="{Binding SecondNumber, Mode=TwoWay}"
+               Keyboard="Numeric"/>
+
+        <Button Text="Click"
+                Command="{Binding GetSumCommand}"/>
+
+        <Label Text="{Binding GetSum,Mode=OneWay}"/>
+    </StackLayout>
+</ContentPage>
