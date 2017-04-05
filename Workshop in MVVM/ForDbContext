@@ -1,0 +1,5 @@
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<MyDBContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
